@@ -74,7 +74,7 @@ const Planet = (props) => {
   return (
       <div className="card">
           <div>
-            <img src={props.image} alt={props.name} />
+            <img src={props.url} alt={props.name} />
           </div>
          <h2>{props.name}</h2>
          <p>{props.desc}</p>
@@ -94,11 +94,7 @@ const Container = (props) => {
     <div className="container">
       {props.planetInfo.map(planet => 
         <Planet 
-        name={planet.name}
-        image={planet.url}
-        desc={planet.desc}
-        diameter={planet.diameter}
-        moons={planet.moons}
+        {...planet}
         key={planet.id.toString()}
         />
       )}
